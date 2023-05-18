@@ -15,4 +15,12 @@ class Book extends Model
      * @var string
      */
     protected $primaryKey = 'id';
+
+    /**
+     * Bookをページネート取得
+     */
+    public function get_book_paginete($paginete_cnt){
+        $data = Book::paginate($paginete_cnt);
+        return $data;
+    }
 }
