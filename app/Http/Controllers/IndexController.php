@@ -17,7 +17,7 @@ class IndexController extends Controller
         $book_model = new Book();
         // 本取得
         $books = $book_model->get_book_paginete(10, $type, $search);
-
+        // ページャーにパラメーター設定
         $books->appends(['type' => $type, 'search' => $search])->links();
         return view("index", ['books' => $books]);
     }

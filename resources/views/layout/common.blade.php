@@ -12,21 +12,7 @@
     </head>
     <body>
         <header class="header">
-            <nav class="navbar">
-                <div class="logo">
-                <a href="index.html">ロゴ</a>
-                </div>
-                <form class="search-form" action="#" method="GET">
-                <input type="text" name="search" placeholder="検索">
-                <button type="submit">検索</button>
-                </form>
-                <ul class="nav-menu">
-                <li><a href="#">ホーム</a></li>
-                <li><a href="#">リポジトリ</a></li>
-                <li><a href="#">プロフィール</a></li>
-                <li><a href="#">ログアウト</a></li>
-                </ul>
-            </nav>
+
         </header>
         <div id="wrapper">
             @yield('content')

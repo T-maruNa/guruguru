@@ -3,18 +3,43 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Http\Requests\Auth\LoginRequest;
+use Illuminate\Support\Facades\Auth; 
 
 class LoginController extends Controller
 {
+
+    // 独自でつくろうと思ったけど、
+    // やっぱlaravelで提供されてるの使ってみる。
+    // テーブルは独自。
+
+    /*
     public function index() {
         var_dump("get");
         return view("login",  ["user_id" => ""]);
     }
-
+    */
     /**
      * ログイン処理
      */
+    /*
+     public function login(Request $request)
+    {
+        $user_info = $request->validate([
+            'user_id' => ['required'],
+            'password' => ['required'],
+        ]);
+
+        // ログインに成功したとき
+        if (Auth::attempt($user_info)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/');
+        }
+
+        // 上記のif文でログインに成功した人以外(=ログインに失敗した人)がここに来る
+        return redirect()->back();
+    }
+    */
+    /*
     public function login(Request $request) {
         // 入力値の取得
         $user_id = $request["user_id"];
@@ -34,7 +59,7 @@ class LoginController extends Controller
         $request->session()->regenerate();
         // ユーザー情報を保存する
         $request->session()->put('users', $user);
-        $this->middleware('auth');
+        //$this->middleware('auth');
         return view("index", ["user_name" => $user->user_name]);
-    }
+    }*/
 }

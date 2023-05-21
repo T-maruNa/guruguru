@@ -4,16 +4,16 @@
 @section('content')
     <div class="container">
         <h2>Login</h2>
-        <form action="{{ url('/login')}}" method="POST">
+        <form method="POST" action="{{ route('login') }}">
             @csrf        
             <div class="form-group">
                 <label for="user_id">id</label>
                 <input type="text" id="user_id" name="user_id" required>
-                {{ $user_id }}
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required>
+                <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
             <div class="form-group">
                 <button type="submit">Login</button>

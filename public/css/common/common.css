@@ -22,7 +22,7 @@ h2 {
     margin-bottom: 30px;
 }
 /** header **/
-  .header {
+  .nav-header {
     background-color: #ffeded;
     padding: 10px;
     display: flex;
