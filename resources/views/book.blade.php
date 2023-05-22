@@ -6,13 +6,9 @@
 @endsection
 @section('content')
     <section>
-        <form id="send-verification" method="post" action="{{ route('verification.send') }}">
+        <form method="post" action="{{ route('book.edit') }}" class="mt-6 space-y-6">
             @csrf
-        </form>
-
-        <form method="post" action="{{ route('book.update') }}" class="">
-            @csrf
-            @method('patch')
+            @method('put')
 
             <div class="book-container">
                 <img class="book-image" src="{{ $book->image_url }}" alt="Book 1">
@@ -47,7 +43,7 @@
             </div>
 
             <div class="flex items-center gap-4">
-                <x-primary-button>{{ __('Save') }}</x-primary-button>
+                <x-primary-button>{{ __('保存') }}</x-primary-button>
 
                 @if (session('status') === 'book-updated')
                     <p

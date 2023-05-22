@@ -20,12 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [IndexController::class,'index'])->name('dashboard');
 Route::middleware('auth')->group(function () {
     Route::get('/book', [BookController::class, 'edit'])->name('book.edit');
-    Route::patch('/book', [BookController::class, 'update'])->name('book.update');
+    Route::put('/book', [BookController::class, 'update'])->name('book.update');
     Route::delete('/book', [BookController::class, 'destroy'])->name('book.destroy');
 });
 //Route::get('/login', [loginController::class,'index'])->name('login');
 //Route::post('/login', [loginController::class,'login']);
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
